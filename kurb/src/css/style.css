@@ -1,0 +1,55 @@
+body {
+    font-family: var(--font-roboto);
+}
+
+.card {
+    max-width: 500px;
+    padding: 10px;
+    box-shadow: 1px 1px 5px 1px #ababab;
+    border-radius: 5px;
+}
+
+.card__header > p {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+}
+
+.card__main {
+    padding-top: 5px;
+    display: flex;
+    max-width: 100%;
+}
+
+.card__content {
+    padding: 10px;
+}
+
+.card__description p:first-child {
+    font-weight: bold;
+}
+
+.card__description p {
+    overflow: hidden;
+}
+
+.card__footer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card__footer button{
+    margin: 5px;
+    padding: 10px;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+}
+
+.card__footer button:hover {
+    cursor: pointer;
+}
