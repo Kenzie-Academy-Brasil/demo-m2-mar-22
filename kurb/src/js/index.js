@@ -74,10 +74,31 @@ function criarCardImage(viagem) {
 }
 
 function montarDados(listaViagens) {
-    for (let contador = 0; contador < listaViagens.length; contador++) {
-        const viagem = listaViagens[contador];
+    const viagensFiltradas = filtrarPorCategoria(listaViagens, "Pacote Completo");
+
+    for (let contador = 0; contador < viagensFiltradas.length; contador++) {
+        const viagem = viagensFiltradas[contador];
         criarCard(viagem);
     }
 }
 
 montarDados(tripData);
+
+
+
+
+
+function filtrarPorCategoria(listaViagens, categoria) {
+    // listaViagens.forEach(function(viagem, index, array) {
+    //     const mensagem = `Viagem para ${viagem.city} vale ${viagem.price}`
+    //     console.log(mensagem)
+    // })
+
+    debugger;
+    const viagensFiltradas = listaViagens.filter((viagem) => {
+        return viagem.category === categoria
+    })
+
+    return viagensFiltradas;
+}
+
