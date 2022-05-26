@@ -39,16 +39,3 @@ function transformaNomeLowerCase() {
     return mostrarNome().toLowerCase();
 }
 
-const nomeMaiuscula = transformaNomeUpperCase();
-const nomeMinuscula = transformaNomeLowerCase();
-
-console.log({
-    nomeMaiuscula,
-    nomeMinuscula
-})
-
-
-
-
-
-
