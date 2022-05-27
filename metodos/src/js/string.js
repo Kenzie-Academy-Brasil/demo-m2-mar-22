@@ -6,6 +6,7 @@
  * DONE - SLICE
  * DONE - TRIM
  */
+
 const nome = "Victor Augusto";
 
 const nomeUpper = nome.toUpperCase();
@@ -26,13 +27,13 @@ const nomeFatiado = nome.slice(4,12);
 //Remove espaços no ínicio e fim da string
 const nomeTrim = nome.trim();
 
-console.log({
-    nome,
-    nomeUpper,
-    nomeLower,
-    indexAugusto,
-    nomeSeparado,
-    nomeInclui,
-    nomeFatiado,
-    nomeTrim
-});
+// console.log({
+//     nome,
+//     nomeUpper,
+//     nomeLower,
+//     indexAugusto,
+//     nomeSeparado,
+//     nomeInclui,
+//     nomeFatiado,
+//     nomeTrim
+// });

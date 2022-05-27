@@ -94,7 +94,6 @@ function filtrarPorCategoria(listaViagens, categoria) {
     //     console.log(mensagem)
     // })
 
-    debugger;
     const viagensFiltradas = listaViagens.filter((viagem) => {
         return viagem.category === categoria
     })
