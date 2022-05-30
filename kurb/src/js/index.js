@@ -1,5 +1,5 @@
 function criarCard(viagem) {
-    const main = document.querySelector("main");
+    const listaCards = document.querySelector(".listaCards");
     
     const card = document.createElement("div");
     card.classList.add("card");
@@ -8,7 +8,7 @@ function criarCard(viagem) {
     const cardMain = criarCardMain(viagem);
 
     card.append(cardHeader, cardMain);
-    main.append(card);
+    listaCards.append(card);
 }
 
 function criarCardHeader(viagem) {
@@ -74,30 +74,50 @@ function criarCardImage(viagem) {
 }
 
 function montarDados(listaViagens) {
-    const viagensFiltradas = filtrarPorCategoria(listaViagens, "Pacote Completo");
+    const listaCards = document.querySelector(".listaCards");
+    listaCards.innerHTML = "";
 
-    for (let contador = 0; contador < viagensFiltradas.length; contador++) {
-        const viagem = viagensFiltradas[contador];
+    for (let contador = 0; contador < listaViagens.length; contador++) {
+        const viagem = listaViagens[contador];
         criarCard(viagem);
     }
 }
 
-montarDados(tripData);
-
-
-
-
-
 function filtrarPorCategoria(listaViagens, categoria) {
-    // listaViagens.forEach(function(viagem, index, array) {
-    //     const mensagem = `Viagem para ${viagem.city} vale ${viagem.price}`
-    //     console.log(mensagem)
-    // })
-
     const viagensFiltradas = listaViagens.filter((viagem) => {
-        return viagem.category === categoria
+        const viagemCategoria = viagem.category.toUpperCase().trim();
+        categoria = categoria.toUpperCase().trim();
+
+        return viagemCategoria.includes(categoria)
     })
 
     return viagensFiltradas;
 }
+
+montarDados(tripData);
+
+function adicionarEventoPesquisa () {
+    const btnPesquisa = document.getElementById("btnPesquisa");
+    const inputPesquisa = document.getElementById("pesquisa");
+    const form = document.querySelector("form");
+
+    form.addEventListener("click", filtrarCards)
+    btnPesquisa.addEventListener("click", filtrarCards);   
+    inputPesquisa.addEventListener("input", filtrarCards); 
+}
+
+adicionarEventoPesquisa();
+
+function filtrarCards(event) {
+    const btnPesquisa = document.getElementById("btnPesquisa");
+    const form = document.querySelector("form");
+
+    const { value: inputPesquisa} = document.getElementById("pesquisa");
+
+    event.preventDefault();
+    const listaFiltrada = filtrarPorCategoria(tripData, inputPesquisa)
+    montarDados(listaFiltrada)
+}
+
+
 
