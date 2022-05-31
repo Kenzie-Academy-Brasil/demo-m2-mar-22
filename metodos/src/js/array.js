@@ -72,6 +72,28 @@ const resultado = valores.reduce((acumulador, atual, index, array) => {
     return acumulador + atual
 })
 
+
+
+const valores2 = [
+    {valor1: 10, valor2: 20 },
+    {valor1: 20, valor2: 30 },
+    {valor1: 40, valor2: 50 },
+]
+
+function somarValores(listaValores) {
+
+    const resultadoSoma = listaValores.reduce((acc, atual) => {
+        acc.valor1 += atual.valor1
+        acc.valor2 += atual.valor2
+
+        return acc 
+    }, {valor1: 0, valor2: 0});
+
+    console.log(resultadoSoma)
+}
+
+somarValores(valores);
+
 valores.sort((primeiro, segundo) => {
     return primeiro - segundo
 })
