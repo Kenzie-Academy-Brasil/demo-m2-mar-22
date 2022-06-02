@@ -120,3 +120,26 @@ function cardInfoTemplate(foguete) {
 
   return infoList;
 }
+
+function menuMobile() {
+  const menuMobile = document.getElementById('headerMobile')
+  const menuMobileClasses = menuMobile.classList
+
+  if(menuMobileClasses.contains('show')) {
+    menuMobileClasses.remove('show')
+    menuMobileClasses.add('hide')
+  } else {
+    if(menuMobileClasses.contains('hide')) {
+      menuMobileClasses.remove('hide')
+    }
+    menuMobileClasses.add('show')
+  }
+}
+
+function adicionaEventoMenu() {
+  const botaoMenu = document.getElementById('headerMobileIcon')
+
+  botaoMenu.addEventListener('click', menuMobile)
+}
+
+adicionaEventoMenu()
