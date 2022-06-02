@@ -74,6 +74,7 @@ function criarTemplate(foguete) {
   cardImg.alt = foguete.rocket_name;
 
   const cardInfoContainer = document.createElement('div');
+  cardInfoContainer.classList.add('card__info')
 
   const infoList = cardInfoTemplate(foguete);
   cardInfoContainer.appendChild(infoList);
