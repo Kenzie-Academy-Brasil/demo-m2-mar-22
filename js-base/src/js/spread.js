@@ -1,3 +1,5 @@
+let churros = "Teste"
+
 /**
  * Spread/Espalhar => ...
  */
@@ -40,4 +42,4 @@ function minhaFuncao(nome, cpf, ...args) {
     console.log([nome, cpf, ...args])
 }
 
-minhaFuncao("Victor Augusto", "12345678909", 10, 20 , 30)
+// minhaFuncao("Victor Augusto", "12345678909", 10, 20 , 30)
