@@ -9,13 +9,12 @@
  * Sugar Syntax
  */
 class Pessoa {
-    constructor(novoNome, novaIdade, novoPeso, novoGenero, novaCpf, novaOcupacao, doaOrgaos, novoTipoSanguineo) {
+    constructor(novoNome, novaIdade, novoPeso, novoGenero, novaCpf, doaOrgaos, novoTipoSanguineo) {
         this.nome           = novoNome;
         this.idade          = novaIdade;
         this.peso           = novoPeso;
         this.genero         = novoGenero;
         this.cpf            = novaCpf;
-        this.ocupacao       = novaOcupacao;
         this.doadoOrgao     = doaOrgaos;
         this.tipoSanguineo  = novoTipoSanguineo;
     }
@@ -59,8 +58,5 @@ class Pessoa {
 
 const grupoPessoas = [];
 
-const maria = new Pessoa("Maria", 18, 7, "", "12345678909", "Streamer", false, "O-");
-grupoPessoas.push(maria);
-const jardel = new Pessoa("Jardel", 55, 7, "", "12345678909", "Streamer", false, "O-");
-grupoPessoas.push(jardel)
-
+const maria = new Pessoa("Maria", 18, 7, "", "12345678909", false, "O-");
+const jardel = new Pessoa("Jardel", 55, 7, "", "12345678909", false, "O-");
