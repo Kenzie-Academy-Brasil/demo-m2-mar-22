@@ -10,22 +10,21 @@ class BancoOrgaos {
     }
 
     adicionarOrgaoAoBanco(orgao) {
+
         this.orgaosDoados.push(orgao)
 
-        this.adicionarHistoricoDoacao(orgao, "kenzinho");
+        this.adicionarHistoricoDoacao(orgao, orgao.doador);
     }
 
-    /**
-     * To-do Código de avaliação para saber se o Donatário 
-     *          bate com o tipo sanguineo do orgão doado 
-     */
-    removerOrgaoDoBanco(orgao) {
+    removerOrgaoDoBanco(orgao, donatario) {
+
         const orgaoEncontrado = this.orgaosDoados.find((elem) => {
-            return elem === orgao
+            return elem.nome === orgao.toUpperCase();
         })
 
-        if (orgaoEncontrado) {
-            //Código de avaliação
+        const transplanteValidado = ValidarDoacao.validarTipoSanguineo(orgaoEncontrado, donatario)
+
+        if (orgaoEncontrado && transplanteValidado) {
             const indexOrgao = this.orgaosDoados.indexOf(orgaoEncontrado);
 
             this.orgaosDoados.splice(indexOrgao, 1);

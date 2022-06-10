@@ -6,13 +6,13 @@ function testarCodigo() {
     };
 
     const bancoKenzieOrgaos = new BancoOrgaos(...Object.values(dadosKenzie))
-    bancoKenzieOrgaos.adicionarOrgaoAoBanco("Rim");
-    bancoKenzieOrgaos.adicionarOrgaoAoBanco("sangue");
 
-    bancoKenzieOrgaos.removerOrgaoDoBanco("Rim")
-    bancoKenzieOrgaos.removerOrgaoDoBanco("sangue")
+    const rim = new Orgao("Rim", "AB" ,"Kenzinho")
+    const coracao = new Orgao("Coração", "O" ,"Angelo")
 
-    console.log(bancoKenzieOrgaos)
+    bancoKenzieOrgaos.adicionarOrgaoAoBanco(rim);
+    bancoKenzieOrgaos.adicionarOrgaoAoBanco(coracao);
+
 }
 
 testarCodigo();
