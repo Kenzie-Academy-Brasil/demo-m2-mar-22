@@ -1,4 +1,8 @@
 class ValidarDoacao {
+    constructor() {
+        this.protocoloProprioAtendimento = "dadadasdas"
+    }
+
     static protocoloAtendimento = "Uma string"
 
     static validarTipoSanguineo(orgao, donatario) {
