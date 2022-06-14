@@ -19,3 +19,5 @@ class ValidarDoacao {
         return doador.idade >= 18
     }
 }
+
+export default ValidarDoacao

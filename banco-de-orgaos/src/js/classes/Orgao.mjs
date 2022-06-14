@@ -6,3 +6,5 @@ class Orgao {
         this.dataDoacao = null;
     }
 }
+
+export default Orgao;

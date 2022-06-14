@@ -1,3 +1,8 @@
+import BancoOrgaos from "./classes/BancoOrgaos.mjs"
+import DoadorOrgaos from "./classes/DoadorOrgaos.mjs"
+import Donatario from "./classes/Donatario.mjs"
+import doadores from "./data/mockDoadores.mjs"
+
 function testarCodigo() {
     const dadosKenzie = {
         cnpj: "69.952.590/0001-59",

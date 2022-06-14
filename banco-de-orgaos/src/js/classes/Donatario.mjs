@@ -1,3 +1,5 @@
+import Pessoa from "./Pessoa.mjs"
+
 class Donatario extends Pessoa{
     constructor(nome, idade, cpf, email, tipoSanguineo, listaEspera) {
         super(nome, idade, cpf, email, tipoSanguineo);
@@ -37,3 +39,5 @@ class Donatario extends Pessoa{
         return novoHistorico
     }
 }
+
+export default Donatario

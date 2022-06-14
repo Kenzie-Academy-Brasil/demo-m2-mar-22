@@ -7,3 +7,5 @@ class Pessoa {
         this.tipoSanguineo = tipoSanguineo;
     }
 }
+
+export default Pessoa

@@ -1,3 +1,6 @@
+import Pessoa from "./Pessoa.mjs"
+import Orgao from "./Orgao.mjs"
+
 class DoadorOrgaos extends Pessoa {
     constructor(nome, idade, cpf, email, tipoSanguineo) {
         super(nome, idade, cpf, email, tipoSanguineo)
@@ -23,3 +26,5 @@ class DoadorOrgaos extends Pessoa {
         return novoHistorico;
     }
 }
+
+export default DoadorOrgaos
