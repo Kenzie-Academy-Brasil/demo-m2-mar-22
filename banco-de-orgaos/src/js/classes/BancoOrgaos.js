@@ -11,25 +11,33 @@ class BancoOrgaos {
 
     adicionarOrgaoAoBanco(orgao) {
 
-        this.orgaosDoados.push(orgao)
+        const doacaoValida = ValidarDoacao.validarIdade(orgao.doador)
 
-        this.adicionarHistoricoDoacao(orgao, orgao.doador);
+        if (doacaoValida) {
+            this.orgaosDoados.push(orgao)
+
+            this.adicionarHistoricoDoacao(orgao, orgao.doador);
+        }
     }
 
     removerOrgaoDoBanco(orgao, donatario) {
 
         const orgaoEncontrado = this.orgaosDoados.find((elem) => {
-            return elem.nome === orgao.toUpperCase();
+            return elem.nome === orgao.nome.toUpperCase();
         })
 
-        const transplanteValidado = ValidarDoacao.validarTipoSanguineo(orgaoEncontrado, donatario)
+        const transplanteValidado = [
+            orgaoEncontrado,
+            ValidarDoacao.validarTipoSanguineo(orgaoEncontrado, donatario),
+            ValidarDoacao.validarDoador(orgao.doador, donatario)
+        ].every((item) => item)
 
-        if (orgaoEncontrado && transplanteValidado) {
+        if (transplanteValidado) {
             const indexOrgao = this.orgaosDoados.indexOf(orgaoEncontrado);
 
             this.orgaosDoados.splice(indexOrgao, 1);
 
-            this.adicionarHistoricoRecepcao(orgao, "kenzinho")
+            this.adicionarHistoricoRecepcao(orgao, donatario)
         }
 
         return orgaoEncontrado;

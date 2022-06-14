@@ -20,9 +20,11 @@ class Donatario extends Pessoa{
             return elem.nome === orgao.nome;
         })
 
-        this.orgaosEmEspera.splice(indexOrgao, 1);
+        if (indexOrgao >= 0) {
+            this.orgaosEmEspera.splice(indexOrgao, 1);
 
-        return this.adicionarHistorico(orgao);
+            return this.adicionarHistorico(orgao);
+        }
     }
     adicionarHistorico(orgaoRecebido) {
         const novoHistorico = {

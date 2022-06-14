@@ -5,18 +5,28 @@ function testarCodigo() {
         razaoSocial: "Banco Kenzie de Orgãos"
     };
 
-    const bancoKenzieOrgaos = new BancoOrgaos(...Object.values(dadosKenzie))
-    const victor = new DoadorOrgaos("Victor Augusto", 23, "12345678909", "victor@kenzie.com.br", "O-");
-    const orgaoDoado = victor.doarOrgao("Rim");
+    const bancoKenzieOrgaos = new BancoOrgaos(...Object.values(dadosKenzie));
+    // const listaInstanciaDoadores = doadores.map(doador => new DoadorOrgaos(...Object.values(doador)))
 
-    const donatario = new Donatario("Parente Victor", 30, "12345678909", "email@email.com.br", "O-")
-    donatario.adicionarOrgaoListaEspera("Rim")
-    donatario.removerOrgaoListaEspera(orgaoDoado)
+    listaDoadoresOrgaos = doadores.map((doador) => {
+        const { nome, idade, cpf, email, tipoSanguineo } = doador;
+
+        const novoDoador = new DoadorOrgaos(nome, idade, cpf, email, tipoSanguineo);
+
+        return novoDoador
+    });
+
+    const orgaoDoado = listaDoadoresOrgaos[0].doarOrgao("Rim");
+    
+    console.log(orgaoDoado);
 
     bancoKenzieOrgaos.adicionarOrgaoAoBanco(orgaoDoado);
 
-    console.log(donatario)
-    // bancoKenzieOrgaos.adicionarOrgaoAoBanco(coracao);
+    const donatario = new Donatario("Kenzinho", 18, "12345678908", "kenzinho@kenzie.com.br", "O-")
+
+    bancoKenzieOrgaos.removerOrgaoDoBanco(orgaoDoado, donatario)    
+
+    console.log(bancoKenzieOrgaos);
 }
 
 testarCodigo();
