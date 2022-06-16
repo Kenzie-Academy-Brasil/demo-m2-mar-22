@@ -1,0 +1,53 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html, 
+body {
+    color: rgba(var(--preto), 1);
+    font-family: var(--font-base);
+    font-size: 16px;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-headings);
+    font-weight: 600;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.75rem;
+    color: rgba(var(--vermelho), 1);
+}
+
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+input, 
+button {
+    font-family: var(--font-base);
+    font-size: 1rem;
+    outline: unset;
+}
+
+button {
+    border: none;
+    background-color: unset;
+    cursor: pointer;
+}

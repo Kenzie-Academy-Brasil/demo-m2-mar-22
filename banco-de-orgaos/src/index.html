@@ -5,8 +5,145 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
+    <header class="header">
+        <div class="container">
+            <div class="header__logo">
+                <img src="./img/logo.svg" alt="Logo Kenzie">
+            </div>
+
+            <nav class="header__menu">
+                <ul class="menu-primario">
+                    <li>
+                        <a href="#">Banco de Órgãos</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Cadastro de Pessoas</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="dados-cadastrais card">
+                <h2>Dados Cadastrais</h2>
+
+                <form class="dados-cadastrais__form">
+                    <div class="dados-cadastrais__wrapper">
+                        <div class="dados-cadastrais__campo">
+                            <label for="nome">Nome completo</label>
+                            <input name="nome" id="nome" type="text">
+                        </div>
+
+                        <div class="dados-cadastrais__campo">
+                            <label for="email">E-mail</label>
+                            <input name="email" id="email" type="email">
+                        </div>
+
+                        <div class="dados-cadastrais__campo">
+                            <label for="cpf">CPF</label>
+                            <input name="cpf" id="cpf" type="text">
+                        </div>
+
+                        <div class="dados-cadastrais__campo">
+                            <label for="idade">Idade</label>
+                            <input name="idade" id="idade" type="number">
+                        </div>
+                    </div>
+
+                    <div class="dados-cadastrais__sangue">
+                        <label>Tipo Sanguíneo</label>
+
+                        <div class="dados-cadastrais__radio">
+                            <input name="sangue" id="a-positivo" type="radio">
+                            <label for="a-positivo">A+</label>
+
+                            <input name="sangue" id="a-negativo" type="radio">
+                            <label for="a-negativo">A-</label>
+
+                            <input name="sangue" id="b-positivo" type="radio">
+                            <label for="b-positivo">B+</label>
+
+                            <input name="sangue" id="b-negativo" type="radio">
+                            <label for="b-negativo">B-</label>
+
+                            <input name="sangue" id="ab-positivo" type="radio">
+                            <label for="ab-positivo">AB+</label>
+
+                            <input name="sangue" id="ab-negativo" type="radio">
+                            <label for="ab-negativo">AB-</label>
+
+                            <input name="sangue" id="o-positivo" type="radio">
+                            <label for="o-positivo">O+</label>
+
+                            <input name="sangue" id="o-negativo" type="radio">
+                            <label for="o-negativo">O-</label>
+                        </div>
+
+                        <button type="button" class="dados-cadastrais__botao">Atualizar</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="historico card">
+                <h2>Histórico de Doações</h2>
+
+                <ul class="historico__lista">
+                    <li class="historico__item">
+                        <div class="historico__icone sangue">
+                            <img src="./img/sangue.svg" alt="Sangue">
+                        </div>
+
+                        <span class="historico__doacao">Sangue</span>
+
+                        <span class="historico__data">14/06/2022</span>
+                    </li>
+
+                    <li class="historico__item">
+                        <div class="historico__icone orgao">
+                            <img src="./img/orgao.svg" alt="Orgão">
+                        </div>
+
+                        <span class="historico__doacao">Rim</span>
+
+                        <span class="historico__data">05/05/2022</span>
+                    </li>
+
+                    <li class="historico__item">
+                        <div class="historico__icone sangue">
+                            <img src="./img/sangue.svg" alt="Sangue">
+                        </div>
+
+                        <span class="historico__doacao">Sangue</span>
+
+                        <span class="historico__data">20/04/2022</span>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Banco Kenzie de Órgãos | Todos os Direitos Reservados</p>
+        </div>
+    </footer>
+
+
     <script src="./js/data/mockDoadores.js"></script>
     <script src="./js/db/DoadorOrgaosDB.js"></script>
     <script src="./js/classes/Orgao.js"></script>

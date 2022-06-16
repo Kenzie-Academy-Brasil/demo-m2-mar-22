@@ -1,0 +1,21 @@
+.container {
+    width: 100%;
+    max-width: 82.5rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 3px 3px 15px 0 rgba(var(--preto), 0.15);
+    padding: 2rem;
+}
+
+@media screen and (min-width: 586px) {
+    .card {
+        width: var(--medida);
+        height: var(--medida);
+    }
+}

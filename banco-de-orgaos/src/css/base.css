@@ -1,0 +1,12 @@
+:root {
+    --font-base: 'Open Sans', sans-serif;
+    --font-headings: 'Barlow', sans-serif;
+
+    --preto: 27, 28, 30;
+    --azul: 81, 99, 211;
+    --vermelho: 235, 74, 49;
+    --branco: 255, 255, 255;
+    --ciano: 38, 215, 235;
+    --cinza-claro: 250, 250, 250;
+    --cinza: 217, 217, 217;
+}
